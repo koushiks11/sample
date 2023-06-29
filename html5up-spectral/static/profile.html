@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Profile - Spectral</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="css/noscript.css" />
+    </noscript>
+    <style>
+        /* Custom CSS for profile page */
+        .profile-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .profile-heading {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-heading h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .profile-heading p {
+            font-size: 18px;
+            color: #666666;
+            margin-bottom: 0;
+        }
+
+        .profile-field {
+            margin-bottom: 20px;
+        }
+
+        .profile-field label {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333333;
+            margin-bottom: 5px;
+        }
+
+        .profile-field p {
+            font-size: 16px;
+            color: #666666;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body class="landing is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header" class="alt">
+            <h1><a href="index.html">Spectral</a></h1>
+            <nav id="nav">
+                <ul>
+                    <li class="special">
+                        <a href="#menu" class="menuToggle"><span>Menu</span></a>
+                        <div id="menu">
+                            <ul>
+                                <li><a href="home.html">Home</a></li>
+                                <li><a href="generic.html">Generic</a></li>
+                                <li><a href="elements.html">Elements</a></li>
+                                <li><a href="index.html">Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <div class="profile-container">
+                    <div class="profile-heading">
+                        <h2>User Profile</h2>
+                        <p>Welcome to your profile page</p>
+                    </div>
+                    <div class="profile-field">
+                        <label>Full Name:</label>
+                        <p id="fullName"></p>
+                    </div>
+                    <div class="profile-field">
+                        <label>Username:</label>
+                        <p id="username"></p>
+                    </div>
+                    <div class="profile-field">
+                        <label>Email:</label>
+                        <p id="email"></p>
+                    </div>
+                    <div class="profile-field">
+                        <label>Phone Number:</label>
+                        <p id="phoneNumber"></p>
+                    </div>
+                    <div class="profile-field">
+                        <label>Gender:</label>
+                        <p id="gender"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.scrollex.min.js"></script>
+    <script src="js/jquery.scrolly.min.js"></script>
+    <script src="js/browser.min.js"></script>
+    <script src="js/breakpoints.min.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Retrieve the user details from the server response
+        const userDetails = JSON.parse('{{userDetails}}');
+
+        // Display the user details on the page
+        document.getElementById('fullName').textContent = userDetails.fullName;
+        document.getElementById('username').textContent = userDetails.username;
+        document.getElementById('email').textContent = userDetails.email;
+        document.getElementById('phoneNumber').textContent = userDetails.phoneNumber;
+        document.getElementById('gender').textContent = userDetails.gender;
+    </script>
+
+</body>
+
+</html>
